@@ -8,15 +8,15 @@ const find = (n: TreeNode, objetivo: string): TreeNode[] => {
     descobertos.unshift(n)
 
     while (descobertos.length > 0) {
-        console.log("ATUAL", atual.id);
-        console.log("DESCO", descobertos);
-        console.log("VISIT", visitados);
-        console.log("MORTO", caminhoMorto);
+        // console.log("ATUAL", atual.id);
+        // console.log("DESCO", descobertos);
+        // console.log("VISIT", visitados);
+        // console.log("MORTO", caminhoMorto);
 
         if (atual.id == objetivo) {
 
             visitados.push(atual)
-            console.log("FIM SUCESSO", visitados);
+            // console.log("FIM SUCESSO", visitados);
             return visitados
         }
 
@@ -63,11 +63,13 @@ const j = new TreeNode("J")
 
 a.addChild(b)
 a.addChild(c)
+a.addChild(i)
 b.addChild(d)
 b.addChild(e)
 c.addChild(f)
 c.addChild(g)
+c.addChild(j)
 e.addChild(h)
 
-const res: TreeNode[] = find(a, "G");
+const res: TreeNode[] = find(a, "J");
 console.log(res);
