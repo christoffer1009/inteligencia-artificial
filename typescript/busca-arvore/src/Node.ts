@@ -1,18 +1,18 @@
 export class TreeNode {
-    id: string;
-    children: TreeNode[] = [];
+  id: string;
+  pai: TreeNode | null;
+  filhos: TreeNode[] = [];
 
-    constructor(id: string) {
-        this.id = id
-    }
+  constructor(id: string, pai: TreeNode | null) {
+    this.id = id;
+    this.pai = pai;
+  }
 
-    addChild(n: TreeNode) {
-        this.children.push(n)
-    }
+  adicionaFilho(n: TreeNode) {
+    this.filhos.push(n);
+  }
 
-    removeChild(id: string) {
-        this.children = this.children.filter(x => x.id != id)
-    }
-
-
+  removeFilho(id: string) {
+    this.filhos = this.filhos.filter((x) => x.id != id);
+  }
 }
